@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function sum(...numbers) {
+        return numbers.reduce((prev, curr) => {
+            return prev + curr
+        }, 0);
+    }
+    console.log(sum(1, 2, 3, 4));
+    console.log(sum(1, 2, 3));
+
+    function convertCurrency(rate, ...amounts) {
+        return amounts.map((amount) => {
+            return amount * rate;
+        });
+    }
+    const amounts = convertCurrency(0.89, 12, 34, 656, 23);
+    console.log(amounts);
+
+    const player = ['Jelly', 123, 5.4, 6.7, 3.4, 7.8, 8.9];
+    const [name, id, ...score]=player;
+    console.log(name, id, score);
+</script>
+</html>

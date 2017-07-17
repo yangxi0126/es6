@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const youngers = ['George', 'John', 'Thomas'];
+    const olders = ['James', 'Andrew', 'Martin'];
+    const members = [...youngers, 'Mary', ...olders];
+    const newMem = members;  //以前的方法避免数组引用  const newMem=[].concat(members);  现在的方法 const newMem=[...members];
+    newMem[0] = '123';
+    console.log(members);
+</script>
+</html>

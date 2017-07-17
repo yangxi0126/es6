@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+<script>
+    //    const todos = [...document.querySelectorAll('li')];
+    //    console.log(todos.map((todo) => {
+    //        return todo.textContent;
+    //    }));
+
+    const todos = [
+        {id: 1, name: 'Go to Store', completed: false},
+        {id: 2, name: 'Watch TV', completed: false},
+        {id: 3, name: 'Go Shopping', completed: false},
+    ];
+    const id = 2;
+    const todoIndex = todos.findIndex((todo) => {
+        if (todo.id == id) {
+            return true;
+        }
+        return false;
+    });
+    const newTodos = [...todos.slice(0, todoIndex), ...todos.slice(todoIndex + 1)];
+    console.log(newTodos);
+</script>
+</html>

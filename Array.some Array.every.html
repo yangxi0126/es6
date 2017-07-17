@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const inventory = [
+        {name: 'apples', quantity: 2},
+        {name: 'bananas', quantity: 0},
+        {name: 'cherries', quantity: 5}
+    ];
+    //返回对象
+    const bananas = inventory.find((fruits) => {
+        if (fruits.name == 'bananas') {
+            return true;
+        }
+        return false;
+    });
+    console.log(bananas);
+    //返回索引
+    const bananasIndex = inventory.findIndex((fruits) => {
+        if (fruits.name == 'bananas') {
+            return true;
+        }
+        return false;
+    });
+    console.log(bananasIndex);
+    //只有一个满足条件就不执行下面
+    const isEnough = inventory.some((fruits) => {
+        console.log(fruits);
+        if (fruits.quantity > 0) {
+            return true;
+        }
+        return false;
+    });
+    console.log(isEnough);
+    //每一个都满足条件  但是其中只要有一个不满足，就不继续执行下面
+    const isAllEnough = inventory.every((fruits) => {
+        console.log(fruits);
+        if (fruits.quantity > 0) {
+            return true;
+        }
+        return false;
+    });
+    console.log(isAllEnough);
+</script>
+</html>
