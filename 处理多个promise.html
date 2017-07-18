@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const userPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(['mojombo', 'vanpelt', 'wycats']);
+        }, 2000);
+    });
+    const moviePromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({name: '摔跤吧，爸爸！', rating: 9.2, year: 2016});
+        }, 500);
+    });
+    Promise
+        .all([userPromise, moviePromise])
+        .then((response) => {
+            const [user, movie] = response;
+            console.log(user);
+            console.log(movie);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+</script>
+</html>

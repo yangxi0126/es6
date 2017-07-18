@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="axios.js"></script>
+<script>
+    let users;
+    axios({
+        method: 'get',
+        url: 'https://api.github.com/users'
+    }).then((response) => {
+        if (response.status == 200) {
+            users = response.data[0].login;
+            return axios({
+                url: `https://api.github.com/users/${users}/repos`
+            });
+        }
+    }).then(function (response) {
+        if (response.status == 200) {
+            console.log(response);
+        }
+    }).catch((err) => {
+        console.log(err);
+    });
+</script>
+</html>
